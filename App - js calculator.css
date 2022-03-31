@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+:root {
+  --grid-color: #0D1A66;
+  --text: #fff;
+  --display: #EDFFEC;
+  --pad: #152FA2;
+  --digit: #102884;
+  --mandarin: #EF8354;
+  --clear: #9E0031;
+  --rem-20: 125%;
+  --rem-16: 100%;
+  --body: #E2E1DF;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: var(--rem-20);
+}
+body {
+ font-family: 'Audiowide', cursive;
+ color: var(--text);
+ text-align: center;
+ background-color: var(--body);
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+/*4 columns -  6 rows*/
+#grid {
+  width: 20rem;
+  height: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20% repeat(5, 1fr);
+  grid-gap: 5px;
+  margin-top: calc(100vh*0.1);
+  padding: 10px;
+
+  background-color: var(--grid-color);
+  border: 0.8rem double var(--pad);
+  border-radius: 0.5rem;
+}
+#display-box {
+  background-color: var(--display);
+  color: var(--grid-color);
+  border: 0.4rem double var(--mandarin);
+  text-align: right;
+  font-size: 1.1rem;
+  line-height: 110%;
+  padding: 5px;
+  margin-bottom: 5px;
+  grid-column: 1/5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+#display-box p {
+  padding-right: 4px;
+}
+.formula-box {
+  height: 60%;
+  line-height: 200%;
+  color: var(--clear);
+}
+.input-box {
+  font-size: 0.8rem;
+  height: 40%;
+  border-top: 2px solid var(--mandarin);
+}
+ span {
+  float: left;
+  color: var(--clear);
+  font-weight: 900;
+}
+
+.wide {
+  grid-column: 1/4;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+button {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+.cell {
+  padding: auto;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.digit {
+  background-color: var(--digit);
+  
+}
+.delete {
+  color: var(--grid-color);
+  background-color: var(--mandarin);
+  font-weight: 900;
+  font-size: 2rem;
+  transform: rotateZ(180deg);
+  line-height: 0%;
+}
+.operator {
+  background-color: var(--pad);
+  font-size: 1.5rem;
+}
+.clear {
+  background-color: var(--clear);
+}
+.wide:hover {
+  border: 3px solid var(--text);
+}
+.cell:hover {
+  border: 3px solid var(--text);
+}
+.hidden {
+  display: none;
+}
+.animated {
+  transition: all 0.5s ease;
+  animation: blink 2s ease-in-out infinite reverse;
+}
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+footer {
+  color: var(--grid-color);
+  font-size: 0.7rem;
+  margin: 20px 0;
+}
+footer ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+#link {
+  border-top: 2px solid var(--body);
+  border-bottom: 2px solid var(--body);
+  transition: all 0.2s ease;
+}
+#link:hover {
+  border-top: 2px solid var(--clear);
+  border-bottom: 2px solid var(--clear);
+}
